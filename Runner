@@ -1,0 +1,32 @@
+CellularAutomaton ca;
+
+void setup() {
+  size(400, 400);
+  ca = new CellularAutomaton();
+}
+
+void draw() {
+  fill(255);
+}
+
+int counter = 0;
+void mousePressed() {
+  int rule = 102;
+  
+  // Whole screen in one click
+  while (counter < width/8) {
+    ca.generate(counter, rule);
+    ca.display(counter);
+    counter ++;
+  }
+  
+  
+  /* 
+  // One line per click
+  if (counter < width/8) {
+    ca.generate(counter);
+    ca.display(counter);
+    counter ++;
+  }
+  */
+}
